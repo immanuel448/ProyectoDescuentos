@@ -42,5 +42,22 @@ namespace Descuentos.Tests
                 calc.CalcularPrecioConCantidad(100, 0, 10));
         }
 
+        [Fact]
+        public void DescuentoFijo_DeberiaRestarCantidad()
+        {
+            var calc = new Calculadora();
+            var resultado = calc.CalcularPrecioConDescuentoFijo(100, 15);
+            Assert.Equal(85, resultado);
+        }
+
+        [Fact]
+        public void DescuentoTipoClienteVIP_DeberiaAplicar20()
+        {
+            var calc = new Calculadora();
+            var resultado = calc.CalcularPrecioPorTipoCliente(100, "vip");
+            Assert.Equal(80, resultado);
+        }
+
+
     }
 }

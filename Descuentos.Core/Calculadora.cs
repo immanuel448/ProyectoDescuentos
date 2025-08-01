@@ -28,5 +28,26 @@ namespace Descuentos.Core
             return totalFinal;
         }
 
+        public decimal CalcularPrecioConDescuentoFijo(decimal precioOriginal, decimal descuentoFijo)
+        {
+            if (descuentoFijo < 0 || descuentoFijo > precioOriginal)
+                throw new ArgumentOutOfRangeException(nameof(descuentoFijo));
+
+            return precioOriginal - descuentoFijo;
+        }
+
+        public decimal CalcularPrecioPorTipoCliente(decimal precioOriginal, string tipoCliente)
+        {
+            int porcentaje = tipoCliente.ToLower() switch
+            {
+                "vip" => 20,
+                "regular" => 10,
+                _ => 0
+            };
+
+            return CalcularPrecioFinal(precioOriginal, porcentaje);
+        }
+
+
     }
 }
