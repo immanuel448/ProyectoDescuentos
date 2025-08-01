@@ -25,5 +25,22 @@ namespace Descuentos.Tests
             Assert.Throws<ArgumentOutOfRangeException>(() =>
                 calc.CalcularPrecioFinal(100, 120));
         }
+
+        [Fact]
+        public void CompraDe5ProductosCon10Porciento_DeberiaSer450()
+        {
+            var calc = new Calculadora();
+            var resultado = calc.CalcularPrecioConCantidad(100, 5, 10);
+            Assert.Equal(450, resultado);
+        }
+
+        [Fact]
+        public void CantidadInvalida_DeberiaLanzarExcepcion()
+        {
+            var calc = new Calculadora();
+            Assert.Throws<ArgumentOutOfRangeException>(() =>
+                calc.CalcularPrecioConCantidad(100, 0, 10));
+        }
+
     }
 }
