@@ -8,56 +8,61 @@ using Descuentos.Core;
 
 namespace Descuentos.Tests
 {
+    // Esta clase contiene pruebas unitarias para la clase Calculadora.
     public class CalculadoraTests
     {
+        // Prueba que un descuento del 10% sobre 100 dé como resultado 90.
         [Fact]
         public void DescuentoDel10_DeberiaDevolver90()
         {
-            var calc = new Calculadora();
-            var resultado = calc.CalcularPrecioFinal(100, 10);
-            Assert.Equal(90, resultado);
+            var calc = new Calculadora(); // Instancia de la clase Calculadora
+            var resultado = calc.CalcularPrecioFinal(100, 10); // Aplica 10% de descuento
+            Assert.Equal(90, resultado); // Verifica que el resultado sea 90
         }
 
+        // Prueba que un porcentaje de descuento mayor a 100 lance una excepción.
         [Fact]
         public void DescuentoMayorA100_DeberiaLanzarExcepcion()
         {
             var calc = new Calculadora();
             Assert.Throws<ArgumentOutOfRangeException>(() =>
-                calc.CalcularPrecioFinal(100, 120));
+                calc.CalcularPrecioFinal(100, 120)); // 120% no es válido
         }
 
+        // Prueba que comprar 5 productos de 100 con 10% de descuento dé 450.
         [Fact]
         public void CompraDe5ProductosCon10Porciento_DeberiaSer450()
         {
             var calc = new Calculadora();
-            var resultado = calc.CalcularPrecioConCantidad(100, 5, 10);
+            var resultado = calc.CalcularPrecioConCantidad(100, 5, 10); // 100 * 5 = 500 - 10% = 450
             Assert.Equal(450, resultado);
         }
 
+        // Prueba que pasar una cantidad inválida (0) lance una excepción.
         [Fact]
         public void CantidadInvalida_DeberiaLanzarExcepcion()
         {
             var calc = new Calculadora();
             Assert.Throws<ArgumentOutOfRangeException>(() =>
-                calc.CalcularPrecioConCantidad(100, 0, 10));
+                calc.CalcularPrecioConCantidad(100, 0, 10)); // Cantidad 0 no es válida
         }
 
+        // Prueba que se reste correctamente un descuento fijo del precio original.
         [Fact]
         public void DescuentoFijo_DeberiaRestarCantidad()
         {
             var calc = new Calculadora();
-            var resultado = calc.CalcularPrecioConDescuentoFijo(100, 15);
+            var resultado = calc.CalcularPrecioConDescuentoFijo(100, 15); // 100 - 15 = 85
             Assert.Equal(85, resultado);
         }
 
+        // Prueba que al tipo de cliente "vip" se le aplique 20% de descuento.
         [Fact]
         public void DescuentoTipoClienteVIP_DeberiaAplicar20()
         {
             var calc = new Calculadora();
-            var resultado = calc.CalcularPrecioPorTipoCliente(100, "vip");
+            var resultado = calc.CalcularPrecioPorTipoCliente(100, "vip"); // 100 - 20% = 80
             Assert.Equal(80, resultado);
         }
-
-
     }
 }
