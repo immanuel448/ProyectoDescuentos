@@ -5,9 +5,49 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 using Descuentos.Core;
+using System.Runtime.InteropServices.Marshalling;
+
 
 namespace Descuentos.Tests
 {
+    public class CalculadoraDescuentosTests
+    {
+        [Fact(DisplayName = "Debe aplicar descuento correctamente")]
+        public void AplicarDescuento_CasoNormal()
+        {
+            // Arrange
+            var calc = new CalculadoraDescuentos();
+            decimal precio = 100m;
+            decimal porcentaje = 20;
+
+            // Act
+            decimal resultado = calc.AplicarDescuento(precio, porcentaje);
+
+            // Assert
+            Assert.Equal(80m, resultado);
+        }
+
+        [Theory(DisplayName = "Debe lanzar excepción si porcentaje es inválido")]
+        [InlineData(-5)]
+        [InlineData(150)]
+        public void AplicarDescuento_PorcentajeInvalido(decimal porcentaje)
+        {
+            var calc = new CalculadoraDescuentos();
+
+            Assert.Throws<ArgumentException>(() => calc.AplicarDescuento(100m, porcentaje));
+        }
+
+        [Fact(DisplayName = "Debe lanzar excepción si precio es negativo")]
+        public void AplicarDescuento_PrecioNegativo()
+        {
+            var calc = new CalculadoraDescuentos();
+
+            Assert.Throws<ArgumentException>(() => calc.AplicarDescuento(-100m, 10));
+        }
+    }
+
+
+
     // Esta clase contiene pruebas unitarias para la clase Calculadora.
     public class CalculadoraTests
     {

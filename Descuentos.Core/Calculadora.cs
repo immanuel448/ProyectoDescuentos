@@ -6,6 +6,17 @@ using System.Threading.Tasks;
 
 namespace Descuentos.Core
 {
+    public class CalculadoraDescuentos
+    {
+        public decimal AplicarDescuento(decimal precioOriginal, decimal porcentaje)
+        {
+            if (precioOriginal < 0) throw new ArgumentException("El precio no puede ser negativo.");
+            if (porcentaje < 0 || porcentaje > 100) throw new ArgumentException("Porcentaje inválido.");
+
+            return precioOriginal - (precioOriginal * porcentaje / 100m);
+        }
+    }
+
     public class Calculadora
     {
         // Calcula el precio final aplicando un porcentaje de descuento.
