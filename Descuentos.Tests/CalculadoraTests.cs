@@ -12,39 +12,48 @@ namespace Descuentos.Tests
 {
     public class CalculadoraDescuentosTests
     {
+        // Esta prueba verifica que un descuento del 20% sobre 100 da como resultado 80.
         [Fact(DisplayName = "Debe aplicar descuento correctamente")]
         public void AplicarDescuento_CasoNormal()
         {
-            // Arrange
+            // Arrange: se crea la instancia de la clase y se definen valores de entrada.
             var calc = new CalculadoraDescuentos();
             decimal precio = 100m;
             decimal porcentaje = 20;
 
-            // Act
+            // Act: se llama al método que se quiere probar.
             decimal resultado = calc.AplicarDescuento(precio, porcentaje);
 
-            // Assert
+            // Assert: se verifica que el resultado sea el esperado.
             Assert.Equal(80m, resultado);
         }
 
+        // Esta prueba usa teoría para probar varios porcentajes inválidos.
+        // Cada InlineData representa un caso de prueba distinto.
         [Theory(DisplayName = "Debe lanzar excepción si porcentaje es inválido")]
-        [InlineData(-5)]
-        [InlineData(150)]
+        [InlineData(-5)]   // Porcentaje negativo → inválido
+        [InlineData(150)]  // Porcentaje mayor a 100 → inválido
         public void AplicarDescuento_PorcentajeInvalido(decimal porcentaje)
         {
+            // Arrange: instancia de la clase a probar.
             var calc = new CalculadoraDescuentos();
 
+            // Assert: se espera que se lance una excepción por porcentaje inválido.
             Assert.Throws<ArgumentException>(() => calc.AplicarDescuento(100m, porcentaje));
         }
 
+        // Esta prueba verifica que no se permite un precio negativo.
         [Fact(DisplayName = "Debe lanzar excepción si precio es negativo")]
         public void AplicarDescuento_PrecioNegativo()
         {
+            // Arrange: se crea la instancia de la clase.
             var calc = new CalculadoraDescuentos();
 
+            // Assert: se espera que se lance excepción por precio negativo.
             Assert.Throws<ArgumentException>(() => calc.AplicarDescuento(-100m, 10));
         }
     }
+
 
 
 
