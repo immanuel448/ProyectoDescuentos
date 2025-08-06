@@ -8,6 +8,7 @@
 # Build results
 bin/
 obj/
+* text=auto
 
 # Packages
 *.nupkg
