@@ -10,7 +10,7 @@
 // 2. Instalar herramienta para generar reporte visual (solo una vez):
 //    dotnet tool install --global dotnet-reportgenerator-globaltool
 //
-// 3. Generar el reporte de cobertura:
+// 3. Generar el reporte de cobertura (lo visual):
 //    reportgenerator -reports:"TestResults/**/coverage.cobertura.xml" -targetdir:"coverage-report" -reporttypes:Html
 //
 //    Esto crea una carpeta llamada 'coverage-report' con un archivo HTML visual del porcentaje de cobertura.
