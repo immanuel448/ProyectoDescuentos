@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<coverage line-rate="0.8787" branch-rate="0.6666" version="1.9" timestamp="1754580132" lines-covered="29" lines-valid="33" branches-covered="16" branches-valid="24">
+  <sources>
+    <source>C:\</source>
+  </sources>
+  <packages>
+    <package name="Descuentos.Core" line-rate="0.8787" branch-rate="0.6666" complexity="24">
+      <classes>
+        <class name="Descuentos.Core.CalculadoraDescuentos" filename="Users\Experto\source\repos\ProyectoDescuentos\Descuentos.Core\Calculadora.cs" line-rate="1" branch-rate="1" complexity="6">
+          <methods>
+            <method name="AplicarDescuento" signature="(System.Decimal,System.Decimal)" line-rate="1" branch-rate="1" complexity="6">
+              <lines>
+                <line number="12" hits="4" branch="False" />
+                <line number="13" hits="5" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="14" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="14" hits="5" branch="True" condition-coverage="100% (4/4)">
+                  <conditions>
+                    <condition number="38" type="jump" coverage="100%" />
+                    <condition number="58" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="16" hits="1" branch="False" />
+                <line number="17" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="12" hits="4" branch="False" />
+            <line number="13" hits="5" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="14" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="14" hits="5" branch="True" condition-coverage="100% (4/4)">
+              <conditions>
+                <condition number="38" type="jump" coverage="100%" />
+                <condition number="58" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="16" hits="1" branch="False" />
+            <line number="17" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="Descuentos.Core.Calculadora" filename="Users\Experto\source\repos\ProyectoDescuentos\Descuentos.Core\Calculadora.cs" line-rate="0.8571" branch-rate="0.5555" complexity="18">
+          <methods>
+            <method name="CalcularPrecioFinal" signature="(System.Decimal,System.Int32)" line-rate="1" branch-rate="0.75" complexity="4">
+              <lines>
+                <line number="24" hits="3" branch="False" />
+                <line number="26" hits="3" branch="True" condition-coverage="75% (3/4)">
+                  <conditions>
+                    <condition number="3" type="jump" coverage="50%" />
+                    <condition number="15" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="27" hits="1" branch="False" />
+                <line number="30" hits="2" branch="False" />
+                <line number="31" hits="2" branch="False" />
+              </lines>
+            </method>
+            <method name="CalcularPrecioConCantidad" signature="(System.Decimal,System.Int32,System.Int32)" line-rate="0.8887999999999999" branch-rate="0.6666" complexity="6">
+              <lines>
+                <line number="35" hits="2" branch="False" />
+                <line number="37" hits="2" branch="True" condition-coverage="50% (2/4)">
+                  <conditions>
+                    <condition number="3" type="jump" coverage="50%" />
+                    <condition number="15" type="jump" coverage="50%" />
+                  </conditions>
+                </line>
+                <line number="38" hits="0" branch="False" />
+                <line number="39" hits="2" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="37" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="40" hits="1" branch="False" />
+                <line number="43" hits="1" branch="False" />
+                <line number="46" hits="1" branch="False" />
+                <line number="48" hits="1" branch="False" />
+                <line number="49" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="CalcularPrecioConDescuentoFijo" signature="(System.Decimal,System.Decimal)" line-rate="0.8" branch-rate="0.5" complexity="4">
+              <lines>
+                <line number="53" hits="1" branch="False" />
+                <line number="55" hits="1" branch="True" condition-coverage="50% (2/4)">
+                  <conditions>
+                    <condition number="12" type="jump" coverage="50%" />
+                    <condition number="26" type="jump" coverage="50%" />
+                  </conditions>
+                </line>
+                <line number="56" hits="0" branch="False" />
+                <line number="59" hits="1" branch="False" />
+                <line number="60" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="CalcularPrecioPorTipoCliente" signature="(System.Decimal,System.String)" line-rate="0.7777" branch-rate="0.25" complexity="4">
+              <lines>
+                <line number="64" hits="1" branch="False" />
+                <line number="66" hits="1" branch="True" condition-coverage="25% (1/4)">
+                  <conditions>
+                    <condition number="23" type="jump" coverage="50%" />
+                    <condition number="36" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="67" hits="1" branch="False" />
+                <line number="68" hits="1" branch="False" />
+                <line number="69" hits="0" branch="False" />
+                <line number="70" hits="0" branch="False" />
+                <line number="71" hits="1" branch="False" />
+                <line number="74" hits="1" branch="False" />
+                <line number="75" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="24" hits="3" branch="False" />
+            <line number="26" hits="3" branch="True" condition-coverage="75% (3/4)">
+              <conditions>
+                <condition number="3" type="jump" coverage="50%" />
+                <condition number="15" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="27" hits="1" branch="False" />
+            <line number="30" hits="2" branch="False" />
+            <line number="31" hits="2" branch="False" />
+            <line number="35" hits="2" branch="False" />
+            <line number="37" hits="2" branch="True" condition-coverage="50% (2/4)">
+              <conditions>
+                <condition number="3" type="jump" coverage="50%" />
+                <condition number="15" type="jump" coverage="50%" />
+              </conditions>
+            </line>
+            <line number="38" hits="0" branch="False" />
+            <line number="39" hits="2" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="37" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="40" hits="1" branch="False" />
+            <line number="43" hits="1" branch="False" />
+            <line number="46" hits="1" branch="False" />
+            <line number="48" hits="1" branch="False" />
+            <line number="49" hits="1" branch="False" />
+            <line number="53" hits="1" branch="False" />
+            <line number="55" hits="1" branch="True" condition-coverage="50% (2/4)">
+              <conditions>
+                <condition number="12" type="jump" coverage="50%" />
+                <condition number="26" type="jump" coverage="50%" />
+              </conditions>
+            </line>
+            <line number="56" hits="0" branch="False" />
+            <line number="59" hits="1" branch="False" />
+            <line number="60" hits="1" branch="False" />
+            <line number="64" hits="1" branch="False" />
+            <line number="66" hits="1" branch="True" condition-coverage="25% (1/4)">
+              <conditions>
+                <condition number="23" type="jump" coverage="50%" />
+                <condition number="36" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="67" hits="1" branch="False" />
+            <line number="68" hits="1" branch="False" />
+            <line number="69" hits="0" branch="False" />
+            <line number="70" hits="0" branch="False" />
+            <line number="71" hits="1" branch="False" />
+            <line number="74" hits="1" branch="False" />
+            <line number="75" hits="1" branch="False" />
+          </lines>
+        </class>
+      </classes>
+    </package>
+  </packages>
+</coverage>
